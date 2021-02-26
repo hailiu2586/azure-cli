@@ -55,7 +55,7 @@ def load_arguments(self, _):
 
     with self.argument_context('bot create') as c:
         c.argument('sku_name', options_list=['--sku'], arg_type=get_enum_type(SUPPORTED_SKUS), help='The Sku of the bot.', arg_group='Registration Bot Specific')
-        c.argument('kind', options_list=['--kind', '-k'], arg_type=get_enum_type(['registration', 'webapp']), help='The kind of the bot.')
+        c.argument('kind', options_list=['--kind', '-k'], arg_type=get_enum_type(['registration', 'webapp', 'azurebot']), help='The kind of the bot.')
         c.argument('display_name', help='The display name of the bot. If not specified, defaults to the name of the bot.', arg_group='Registration Bot Specific')
         c.argument('description', options_list=['--description', '-d'], help='The description of the bot.', arg_group='Registration Bot Specific')
         c.argument('endpoint', options_list=['-e', '--endpoint'], help='The messaging endpoint of the bot.', arg_group='Registration Bot Specific')

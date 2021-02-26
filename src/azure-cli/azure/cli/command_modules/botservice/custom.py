@@ -106,6 +106,7 @@ def create(cmd, client, resource_group_name, resource_name, kind, msa_app_id, pa
     kind = kind.lower()
     registration_kind = 'registration'
     bot_kind = 'bot'
+    azure_bot_kind = 'azurebot'
     webapp_kind = 'webapp'
 
     # Mapping: registration is deprecated, we now use 'bot' kind for registration bots
@@ -139,7 +140,7 @@ def create(cmd, client, resource_group_name, resource_name, kind, msa_app_id, pa
     logger.info('Creating Azure Bot Service.')
 
     # Registration bots: simply call ARM and create the bot
-    if kind == bot_kind:
+    if kind == bot_kind or kind == azure_bot_kind:
 
         logger.info('Detected kind %s, validating parameters for the specified kind.', kind)
 
